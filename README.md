@@ -93,13 +93,16 @@ In products.js:
 
 # Getting started
 
-## 1. Create:
+## 1a. Create:
 1. **products** folder
 1. **index.html** in products folder
 1. **products.css** in products folder
 1. **products.js** in products folder
 1. **dice.js** in main folder
 1. **main.css** that all pages will link to
+
+## 1b. Find Images:
+    1. Dice: d10 x 5
 
 
 ## 2. Design List in HTML

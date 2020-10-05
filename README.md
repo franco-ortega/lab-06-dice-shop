@@ -97,7 +97,7 @@ In products.js:
 1. **products** folder
 1. **index.html** in products folder
 1. **products.css** in products folder
-1. **products.js** in products folder
+1. **dice.js** in products folder
 1. **dice.js** in main folder
 1. **main.css** that all pages will link to
 

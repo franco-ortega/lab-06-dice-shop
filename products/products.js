@@ -7,6 +7,6 @@ for (let i = 0; i < dice.length; i++) {
     const die = dice[i];
 
     const li = renderDice(die);
-console.log(li);
+
     ul.appendChild(li)
 }

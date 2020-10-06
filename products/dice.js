@@ -40,9 +40,4 @@ export const dice = [
         category: '',
         price: '5'
     },
-
-
-
-
-
 ];

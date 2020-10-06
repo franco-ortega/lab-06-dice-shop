@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    --raw-umber: #6d5f44ff;
+    --gold-crayola: #e8c992ff;
+    --maize-crayola: #ffd151ff;    
+    background-color: var(--raw-umber);
+    color: var(--gold-crayola);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+a {
+    color: var(--maize-crayola);
+}

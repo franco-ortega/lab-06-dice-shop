@@ -1,4 +1,5 @@
-import { renderDice } from '../utils.js';
+import { renderDice, findById } from '../utils.js';
+import { dice } from '../products/dice.js';
 
 const test = QUnit.test;
 
@@ -25,4 +26,31 @@ test('time to test a function', (expect) => {
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
+});
+
+
+
+
+
+test('function will take in an array and an id and return the object with that id', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const theDice = dice
+    const theID = 'blue d10'
+    const expected = {
+        id: 'blue d10',
+        name: 'Blue d10',
+        photo: 'd10_blue.jpeg',
+        description: 'A blue 10-sided die',
+        category: '',
+        price: '4'
+    };
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = findById(theDice, theID);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
 });

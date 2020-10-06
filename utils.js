@@ -42,11 +42,15 @@ export function renderDice(dice) {
 export function findById(diceArray, diceId) {
     for (let i = 0; i < diceArray.length; i++) {
         const myDice = diceArray[i];
-        
-console.log(myDice);
 
         if (myDice.id === diceId) {
             return myDice;
         } 
     }
+}
+
+export function calcLineItem(quantity, price) {
+    const subTotal = quantity * price;
+
+    return subTotal.toFixed(2);
 }

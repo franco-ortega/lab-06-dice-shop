@@ -134,3 +134,97 @@ Do this is products.js
 1. Loop thru data (see long instructions above for details)
 1. **ACP**
 
+
+
+# Day 2 - Add a Shopping Cart
+
+
+## Things to make:
+
+1. Cart folder
+    1. index.html
+    1. cart.css
+    1. cart.js
+    1. render-line-items.js
+
+1. Cart index.html:
+    1. Table (table)
+        1. Table Header (th)
+        1. Table Rows (tr: items x3?)
+        1. Table Row (tr: total)
+    1. Button (button: "Place Order")
+    1. **ACP**
+
+1. Array w/ Object Literals:
+    1. Cart Rows in **cart.js**:
+        1. item ID
+        1. item quantity
+    1. Export array
+    1. **ACP**
+
+1. TDD findById (utils.js)
+    1. Takes array and id, and it returns item with that id.
+    1. Use a Loop:
+        1. Access item using ID from warmup
+    
+1. TDD calcLineItem (utils.js)
+    1. (Function 7.2 below)
+    1. Take quanity and price, and returns total.
+    1. Use .toFixed(2)
+
+1. TDD renderFunction (cart/render-line-items.js)
+    1. (Function 7.1 below)
+    1. Takes cart line item and product (object?) and returns DOM that matches static example in index.html
+    1. Read this step more closely in repo!
+    1. Create the static example programmatically using JS.
+    1. Make sure tests pass.
+    1. **ACP**
+
+1. Functions:
+    1. renderTable
+    1. calculateItemSubtotal
+    1. calculateCartTotal
+
+1. Generate Shopping Cart
+    1. Import:
+        1. dice and cart data
+        1. renderFunction
+        1. util functions (as needed)
+    1. Locate tbody where line items will go
+    1. Loop thru data ((weeeeeee!!))
+        1. use class example or lab example from yesterday
+            1. create variable2 based on array index 
+            1. use findById to get product for this line item
+            1. Pass to DOM and capture in variable2
+            1. Append to table (tbody)
+    1. **ACP**
+
+1. TDD calcOrderTotal() (utils.js)
+    1. (Function 7.3 above)
+    1. Takes dice array and cart array
+    1. Adds up the Order Total
+    1. Function:
+        1. Create variable to hold order total
+        1. Loop line items and use calcLineItem() to calcuate each line item and add it to the order total.
+            1. ACCUMULATOR
+            1. .toFixed(2)
+        1. Return order total.
+
+1. Add Order to Table (cart/cart.js)
+    1. Import calcOrderTotal
+    1. Use function to calculate cart total and display this total in the appropriate element.
+
+1. Misc:  
+    1. Link main.css to Cart index.html
+    1. Link cart.js and maybe other js files to Cart index.html
+    1. Product folder
+        1. Hyperlink to Cart index.html
+    1. Main index.html
+        1. Hyperlink to Cart index.html
+
+## Points
+1. Hosted on GitHub with URL in About section, Product HTML works and uses good Semantic Element choices = **2**
+1. CSS used consciously and correctly = **1**
+1. TDD calcCaertItemTotal and calcOrderTotal = **2**
+1. TDD DOM Render Function = **3**
+1. Correctly orchestrate product row generation in shopping-cart.js = **2**

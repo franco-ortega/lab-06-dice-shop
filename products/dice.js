@@ -35,7 +35,7 @@ export const dice = [
     {
         id: 'yellow d10',
         name: 'Yellow` d10',
-        photo: 'd10_yellow`.jpeg',
+        photo: 'd10_yellow.jpeg',
         description: 'A medium, yellow` 10-sided die',
         category: 'd10',
         price: '5'

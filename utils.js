@@ -1,16 +1,3 @@
-/*
-
-    {
-        id: 'black d10',
-        name: 'Black d10',
-        photo: 'd10_black.jpeg',
-        description: 'A medium, black 10-sided die.',
-        category: '',
-        price: '3',
-    },
-
-*/
-
 export function renderDice(dice) {
     const li = document.createElement('li');
     const id = document.createElement('id')
@@ -50,6 +37,4 @@ export function renderDice(dice) {
     li.appendChild(button);
 
     return li;
-
-
 }

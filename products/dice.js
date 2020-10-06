@@ -3,9 +3,9 @@ export const dice = [
         id: 'black d10',
         name: 'Black d10',
         photo: 'd10_black.jpeg',
-        description: 'A medium, black 10-sided die',
-        category: 'd10',
-        price: '3'
+        description: 'A medium, black 10-sided die.',
+        category: '',
+        price: '3',
     },
 
     {

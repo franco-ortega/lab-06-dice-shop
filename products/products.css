@@ -8,6 +8,10 @@ body {
     align-items: center;
 }
 
+header {
+    font-size: 2em;
+    margin: 10px;
+}
 li {
     display: flex;
     flex-direction: column;

@@ -1,11 +1,13 @@
 body {
-    background-color: yellow;
-    color: purple;
-    font-family: fantasy;
+    --raw-umber: #6d5f44ff;
+    --gold-crayola: #e8c992ff;
+    --maize-crayola: #ffd151ff;    
+    background-color: var(--maize-crayola);
+    color: var(--raw-umber);    
     padding: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
 }
 
 header {
@@ -22,15 +24,26 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 200px;
+    border: 1px solid black;
+    text-align: center;
 }
 
 p {
-    margin: px;
+    margin: 1px;
+    padding: 1px;
 }
 
 img {
-    height: 100px;
+    height: 125px;
     margin: 5px;
+    padding: 5px;
+}
+
+a {
+    color: green;
 }
 
 footer {

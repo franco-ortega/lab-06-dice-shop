@@ -38,3 +38,37 @@ export function renderDice(dice) {
 
     return li;
 }
+
+export function findById(diceArray, diceId) {
+    for (let i = 0; i < diceArray.length; i++) {
+        const myDice = diceArray[i];
+
+        if (myDice.id === diceId) {
+            return myDice;
+        } 
+    }
+}
+
+export function calcLineItem(quantity, price) {
+    const subTotal = quantity * price;
+
+    return subTotal.toFixed(2);
+}
+
+import { dice } from '../products/dice.js';
+
+export function calcOrderTotal(cartArray, diceArray) {
+
+    let accumulator = 0;
+
+    for (let i = 0; i < cartArray.length; i++) {
+        const theDice = cartArray[i];
+
+        const trueDice = findById(diceArray, theDice.id);
+
+        const grandTotal = trueDice.price * theDice.quantity;
+
+        accumulator = accumulator + grandTotal;
+    }
+    return accumulator
+}

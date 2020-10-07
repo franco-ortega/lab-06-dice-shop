@@ -1,0 +1,30 @@
+body {
+    text-align: center;
+}
+
+table {
+    width: 400px;
+    margin: 5px;
+    border: 2px solid black;
+}
+
+th {
+    text-align: center;
+}
+
+tr {
+    text-align: center;
+    border: 2px solid red;
+}
+
+td {
+    border: 1px solid brown;
+}
+
+tfoot {
+    height: 30px;
+}
+
+button {
+    margin: 5px;
+}

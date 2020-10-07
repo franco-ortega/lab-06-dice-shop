@@ -1,3 +1,4 @@
+/*
 export const myCart = [
     {
         id: 'black d10',
@@ -12,3 +13,4 @@ export const myCart = [
         quantity: 2
     }
 ];
+*/

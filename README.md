@@ -228,3 +228,56 @@ Do this is products.js
 1. TDD calcCaertItemTotal and calcOrderTotal = **2**
 1. TDD DOM Render Function = **3**
 1. Correctly orchestrate product row generation in shopping-cart.js = **2**
+
+
+
+# Day 3 - Get the "Place Order" Button working
+
+
+1. Add EVENT LISTENER to "Add to Cart" button in renderFunction(). It must:
+    1. Get existing info in localStorage
+        1. Use empty array [] if cart is empty
+        1. If there is data, JSON.parse it back into an array
+    1. Check if item is already in cart (use findyById() function)
+        1. If already in cart, then increment item
+        1. If not in cart, add to cart:
+        const lineItem = {
+        id: <product-id>,
+        quantity: 1
+        };
+    1. Save cart to localStorage via JSON.stringify
+
+1. Get cart from localStorage with JSON.parse and use it in rendering the table.
+
+1. Place Order
+    1. If there are no items in cart, disable "Place Order" button.
+    1. Add EVENT LISTENER to "Place Order" button that will:
+        1. Display an alert() with contents of cart
+            1. hint: JSON.stringify(cart, true, 2) will give you nicely formatted JSON
+        1. Remove the cart from localStorage (.removeItem)
+        1. Redirect the user back to the home page
+
+
+
+## Points
+
+1. Hosted on GitHub with URL in About section	**1**
+1. Add product to cart (addEventListener in render product)	**4**
+1. Load cart on shopping cart page	**3**
+1. Place order with alert, remove cart, and redirect	**2**
+
+
+## Stretch
+### STRETCH: Add Quantity of Products
+1. Add a quantity drop-down to the rendered product. When the "Add" button is clicked, add the indicated amount of product to the quantity.
+
+### STRETCH: Move Data Work to Function
+2. Create a module called cart-api.js. Export a function for each of the specific data tasks below. You already have the correct code, remove it into these functions and change existing code to import and use these new functions instead:
+    1. getCart
+    1. addToCart
+    1. clearCart
+
+## Stretch Points
+
+1. *Add Quantity to product page*	**+1**
+1. *TDD getCart, clearCart, and setCart functions for cart-api.js*	**+1**

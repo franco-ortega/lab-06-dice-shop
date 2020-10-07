@@ -29,6 +29,62 @@ export function renderDice(dice) {
     button.textContent = "Add to dice bag.";
     button.value = dice.id;
 
+
+
+// ************BUTTON STARTS HERE**************
+    button.addEventListener('click', () => {
+
+console.log('the user clicked: ' + dice.id)
+
+
+
+
+//setFromLocalStorage FUNCTION STARTS HERE******
+function setInLocalStorage(key, value) {
+    const stringyKey = JSON.stringify(value);
+    localStorage.setItem(key, stringyKey);
+
+return stringyKey;
+}
+//setFromLocalStorage FUNCTION ENDS HERE******
+
+//getFromLocalStorage FUNCTION STARTS HERE******
+function getFromLocalStorage(key) {
+    const item = localStorage.getItem(key);
+
+    return JSON.parse(item);
+}
+//getFromLocalStorage FUNCTION ENDS HERE******
+
+
+
+
+    const myCart = getFromLocalStorage('CART') || [];
+console.log(myCart);
+    
+
+    const itemInCart = findById(myCart, dice.id);
+console.log(itemInCart);
+ ;
+
+    if (itemInCart === undefined) {
+
+        const newItemInCart = {
+            id: dice.id,
+            quantity: 1
+        };
+
+        myCart.push(newItemInCart);
+    } else {
+        itemInCart.quantity++;
+    }
+
+    setInLocalStorage('CART', myCart);
+
+    })
+// ************BUTTON ENDS HERE**************
+
+
     li.appendChild(name);
     li.appendChild(photo);
     li.appendChild(description);
@@ -38,6 +94,10 @@ export function renderDice(dice) {
 
     return li;
 }
+
+
+
+
 
 export function findById(diceArray, diceId) {
     for (let i = 0; i < diceArray.length; i++) {
@@ -49,11 +109,19 @@ export function findById(diceArray, diceId) {
     }
 }
 
+
+
+
+
 export function calcLineItem(quantity, price) {
     const subTotal = quantity * price;
 
     return subTotal.toFixed(2);
 }
+
+
+
+
 
 export function calcOrderTotal(cartArray, diceArray) {
 

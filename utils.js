@@ -55,8 +55,6 @@ export function calcLineItem(quantity, price) {
     return subTotal.toFixed(2);
 }
 
-import { dice } from '../products/dice.js';
-
 export function calcOrderTotal(cartArray, diceArray) {
 
     let accumulator = 0;

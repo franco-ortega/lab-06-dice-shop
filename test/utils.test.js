@@ -1,5 +1,6 @@
-import { renderDice, findById, calcLineItem } from '../utils.js';
 import { dice } from '../products/dice.js';
+import { renderDice, findById, calcLineItem } from '../utils.js';
+import { renderLineItems } from '../cart/render-line-items.js'
 
 const test = QUnit.test;
 
@@ -70,20 +71,31 @@ test('This function takes a quantity and price, and it multiples them to find th
 });
 
 
-
-// TEST 4
-test('This function takes a quantity and price, and it multiples them to find the total, and it returns the total', (expect) => {
+// Test 4
+test('REAL TEST: This function takes both a cart line item, and the corresponding product, and returns dom that matches your static html example', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const howManyDice = 5
-    const dicePrice = 2
-    const expected = 10
+    const thisItem =     {
+        id: 'green d10',
+        name: 'Green d10',
+        photo: 'd10_green.jpeg',
+        description: 'A green 10-sided die',
+        category: '',
+        price: '2'
+    }
+    const thisDice = {
+        id: 'green d10',
+        quantity: 3
+    };
+    
+    const expected = `<tr><td>Green d10</td><td>$2</td><td>3</td><td>$6.00</td></tr>`;
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = calcLineItem(howManyDice, dicePrice);
+    const actual = renderLineItems(thisDice);
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    expect.equal(actual.outerHTML, expected);
 });
+

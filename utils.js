@@ -62,17 +62,13 @@ export function calcOrderTotal(cartArray, diceArray) {
     let accumulator = 0;
 
     for (let i = 0; i < cartArray.length; i++) {
-        const item = cartArray[i];
+        const theDice = cartArray[i];
 
-        const trueItem = findById(diceArray, item.id);
+        const trueDice = findById(diceArray, theDice.id);
 
-        const subtotal = trueItem.price * item.quantity;
+        const grandTotal = trueDice.price * theDice.quantity;
 
-        accumulator = accumulator + subtotal;
-console.log(accumulator);
-
+        accumulator = accumulator + grandTotal;
     }
-console.log(accumulator);
-    return 10;
-
+    return accumulator
 }

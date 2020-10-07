@@ -1,4 +1,3 @@
-import { myCart } from './cart.js';
 import { dice } from '../products/dice.js';
 import { findById, calcLineItem } from '../utils.js';
 

@@ -1,7 +1,6 @@
 import { dice } from '../products/dice.js';
 import { renderDice, findById, calcLineItem, calcOrderTotal } from '../utils.js';
 import { renderLineItems } from '../cart/render-line-items.js';
-//import { myCart } from '../cart/cart.js';
 
 const test = QUnit.test;
 
@@ -116,12 +115,10 @@ test('TEST 5: This function takes the cart array and products array. Then it cal
         price: '5'
     }]
     const expected = 10
-console.log(expected)
     
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = calcOrderTotal(cartArray, productsArray);
-console.log(actual)
 
     //Expect
     // Make assertions about what is expected versus the actual result

@@ -1,12 +1,13 @@
 import { dice } from '../products/dice.js';
-import { myCart } from './cart.js';
 import { renderLineItems } from './render-line-items.js';
-import { calcOrderTotal } from '../utils.js';
+import { calcOrderTotal, getFromLocalStorage } from '../utils.js';
 
 const table = document.querySelector('tbody');
 
-for (let i = 0; i < myCart.length; i++) {
-    const myDie = myCart[i];
+const cart = getFromLocalStorage('CART') || [];
+
+for (let i = 0; i < cart.length; i++) {
+    const myDie = cart[i];
 
     const tr = renderLineItems(myDie);
 
@@ -14,6 +15,6 @@ for (let i = 0; i < myCart.length; i++) {
 }
 
 const tdCartTotal = document.querySelector('.cart-total');
-const orderTotal = calcOrderTotal(myCart, dice);
+const orderTotal = calcOrderTotal(cart, dice);
 
 tdCartTotal.textContent = `$${orderTotal}`;

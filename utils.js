@@ -39,22 +39,7 @@ console.log('the user clicked: ' + dice.id)
 
 
 
-//setFromLocalStorage FUNCTION STARTS HERE******
-function setInLocalStorage(key, value) {
-    const stringyKey = JSON.stringify(value);
-    localStorage.setItem(key, stringyKey);
 
-return stringyKey;
-}
-//setFromLocalStorage FUNCTION ENDS HERE******
-
-//getFromLocalStorage FUNCTION STARTS HERE******
-function getFromLocalStorage(key) {
-    const item = localStorage.getItem(key);
-
-    return JSON.parse(item);
-}
-//getFromLocalStorage FUNCTION ENDS HERE******
 
 
 
@@ -138,3 +123,21 @@ export function calcOrderTotal(cartArray, diceArray) {
     }
     return accumulator
 }
+
+
+//setFromLocalStorage FUNCTION STARTS HERE******
+function setInLocalStorage(key, value) {
+    const stringyKey = JSON.stringify(value);
+    localStorage.setItem(key, stringyKey);
+
+return stringyKey;
+}
+//setFromLocalStorage FUNCTION ENDS HERE******
+
+//getFromLocalStorage FUNCTION STARTS HERE******
+export function getFromLocalStorage(key) {
+    const item = localStorage.getItem(key);
+
+    return JSON.parse(item);
+}
+//getFromLocalStorage FUNCTION ENDS HERE******

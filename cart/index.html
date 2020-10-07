@@ -20,19 +20,19 @@
         Your Shopping Cart
         
         <table>
-            <tr>
-                <th>Item</th>
-                <th>Cost $</th>
-                <th>Quantity</th>
-                <th>total</th>
-            </tr>
-            <tr>
-                <td>Green d10</td>
-                <td>$2</td>
-                <td>3</td>
-                <td>$6</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Cost $</th>
+                    <th>Quantity</th>
+                    <th>total</th>
+                </tr>
+            </thead>
+            <tbody class="shopping-cart">
+
+            </tbody>
         </table>
+
         <button>Place Order</button>
     </main>
     <footer>
@@ -40,6 +40,8 @@
         <br><br>
         Return to the <a href="../">Home Page</a>.
     </footer>
+    <script type="module" src="./cart.js"></script>
+
 <!--
     <script type="module" src="../products/dice.js"></script>
     <script type="module" src="../products/products.js"></script>
@@ -53,5 +55,13 @@
                 <td colspan="3">Total</td>
                 <td colspan="1  ">$6</td>
             </tfoot>
-    
+
+            
+            <tr>
+                <td>Green d10</td>
+                <td>$2</td>
+                <td>3</td>
+                <td>$6</td>
+            </tr>
+
 -->

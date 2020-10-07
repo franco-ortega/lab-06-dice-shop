@@ -1,3 +1,6 @@
+import { dice } from '../products/dice.js';
+import { renderLineItems } from './render-line-items.js';
+
 export const myCart = [
     {
         id: 'black d10',
@@ -9,6 +12,19 @@ export const myCart = [
     },
     {
         id: 'yellow d10',
-        quantity: 1
+        quantity: 2
     }
 ];
+
+
+const table = document.querySelector('tbody');
+console.log(table);
+
+for (let i = 0; i < myCart.length; i++) {
+    const myDie = myCart[i];
+console.log(myDie);
+    const tr = renderLineItems(myDie);
+console.log(tr);
+    table.appendChild(tr)
+    console.log(table);
+}

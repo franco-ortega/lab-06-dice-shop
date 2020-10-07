@@ -1,6 +1,7 @@
 import { dice } from '../products/dice.js';
 import { renderDice, findById, calcLineItem } from '../utils.js';
-import { renderLineItems } from '../cart/render-line-items.js'
+import { renderLineItems } from '../cart/render-line-items.js';
+//import { myCart } from '../cart/cart.js';
 
 const test = QUnit.test;
 

@@ -54,3 +54,25 @@ export function calcLineItem(quantity, price) {
 
     return subTotal.toFixed(2);
 }
+
+import { dice } from '../products/dice.js';
+
+export function calcOrderTotal(cartArray, diceArray) {
+
+    let accumulator = 0;
+
+    for (let i = 0; i < cartArray.length; i++) {
+        const item = cartArray[i];
+
+        const trueItem = findById(diceArray, item.id);
+
+        const subtotal = trueItem.price * item.quantity;
+
+        accumulator = accumulator + subtotal;
+console.log(accumulator);
+
+    }
+console.log(accumulator);
+    return 10;
+
+}

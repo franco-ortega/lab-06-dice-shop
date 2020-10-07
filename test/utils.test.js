@@ -1,11 +1,11 @@
 import { dice } from '../products/dice.js';
-import { renderDice, findById, calcLineItem } from '../utils.js';
+import { renderDice, findById, calcLineItem, calcOrderTotal } from '../utils.js';
 import { renderLineItems } from '../cart/render-line-items.js';
 //import { myCart } from '../cart/cart.js';
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
+test('TEST 1: time to test a function', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const singleDie = {
@@ -31,7 +31,7 @@ test('time to test a function', (expect) => {
 });
 
 
-test('function will take in an array and an id and return the object with that id', (expect) => {
+test('TEST 2: function will take in an array and an id and return the object with that id', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const theDice = dice
@@ -55,7 +55,7 @@ test('function will take in an array and an id and return the object with that i
 });
 
 
-test('This function takes a quantity and price, and it multiples them to find the total, and it returns the total', (expect) => {
+test('TEST 3: This function takes a quantity and price, and it multiples them to find the total, and it returns the total', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const howManyDice = 6
@@ -72,8 +72,7 @@ test('This function takes a quantity and price, and it multiples them to find th
 });
 
 
-// Test 4
-test('REAL TEST: This function takes both a cart line item, and the corresponding product, and returns dom that matches your static html example', (expect) => {
+test('TEST 4: This function takes both a cart line item, and the corresponding product, and returns dom that matches your static html example', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const thisItem =     {
@@ -100,3 +99,31 @@ test('REAL TEST: This function takes both a cart line item, and the correspondin
     expect.equal(actual.outerHTML, expected);
 });
 
+
+test('TEST 5: This function takes the cart array and products array. Then it calculates the total of your cart data as the expected value.', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const cartArray = [ {
+        id: 'yellow d10',
+        quantity: 2
+    }];
+    const productsArray = [    {
+        id: 'yellow d10',
+        name: 'Yellow d10',
+        photo: 'd10_yellow.jpeg',
+        description: 'A yellow 10-sided die',
+        category: '',
+        price: '5'
+    }]
+    const expected = 10
+console.log(expected)
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = calcOrderTotal(cartArray, productsArray);
+console.log(actual)
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual, expected);
+});

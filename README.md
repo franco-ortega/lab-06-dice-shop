@@ -281,3 +281,94 @@ Do this is products.js
 
 1. *Add Quantity to product page*	**+1**
 1. *TDD getCart, clearCart, and setCart functions for cart-api.js*	**+1**
+
+
+# Day 4: Product Entry
+
+## Create:
+1. product-entry folder:
+    1. index.html
+    1. product-entry.js
+    1. product-entry.css
+1. Links in header for:
+    1. Home page
+    1. Dice page
+    1. Cart page
+    1. Product Entry page
+1. Add header links to:
+    1. index.html
+    1. Products index.html
+    1. Cart index.html
+    1. Product-Entry index.html
+
+
+### Step 1: Design Product Entry index.html + css
+
+1. Create form:
+    1. id: 'black d10',
+    1. name: 'Black d10',
+    1. photo: 'd10_black.jpeg',
+    1. description: 'A black 10-sided die.',
+    1. category: '',
+    1. price: '3',
+1. Add the header links
+1. **ACP**
+
+### Step 1.5: Replace
+1. Replace all uses of hardcoded products with products living in local storage.
+    1. Dice and Cart pages need to use localStorage
+    1. If localStorage is empty, seed it with the Dice array
+    1. Create seedAndGetProducts that:
+        1. Checks if prodcuts are in localStorage
+            1. If so, return products
+            1. If not, put hard coded Dice in localStorage
+        1. Returns products
+
+
+### Step 2: TDD API Method for addProduct() function in utils.js
+
+1. Adds new product and places in localStorage
+    1. Function will:
+        1. Get existing product array
+        1. Push new product into array
+        1. Re-save product array to localStorage
+    1. Test will:
+        1. Call addProduct() function
+        1. Check localStorage to see if product was added
+    1. **ACP**
+
+
+### 1. Step 3: Form Submit Event
+
+In product-entry.js:
+1. Get reference to the form (link to <\form/> tag or "id" of form)
+1. Subscribe to the submit event (use 'submit' in eventListener)
+1. Use event.preventDefaults()
+1. Create "new FormData" object that passes the form
+1. Create new product object from form (use "form.get")
+1. Call the new store addProduct() function with the form object
+1. Reset the form (use .removeItem or .clear?)
+1. **ACP**
+
+
+### Points
+    - Hosted on github, links in header, user experience is smooth **2 pts**
+    - TDD Add Product function	**2 pts**
+    - Use new FormData to create new product object	**2 pts**
+    - Wire-up form submit with prevent default	**2 pts**
+    - New item shows up in cart when added to cart	**2 pts**
+
+### STRETCH Step 4: Remove a Product
+1. On the product entry page, also render a list of products with a remove button by each one.
+    1. Add a "Remove Item" button (eventListener('click')) to renderProduct() function
+1. Add a function removeProduct that takes a product code. In that method, find the product and remove from the product array.
+    1. Create function that uses product ID to look for product in the array, and if it finds the ID, it removes that product.
+1. Use this funtion to remove an item on an appropriate click.
+    1. Connect this function to the "Remove Item" button (eventListener('click'))
+1. **ACP**
+1. BONUS: When adding a product, also render a new list items add it to the list of products.
+    1. ???
+1. **ACP**
+
+### Stretch Points
+    Remove Product on Admin Page	** +1 **

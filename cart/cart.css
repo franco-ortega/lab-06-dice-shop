@@ -1,5 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    --raw-umber: #6d5f44ff;
+    --gold-crayola: #e8c992ff;
+    --maize-crayola: #ffd151ff;    
+    background-color: var(--maize-crayola);
+    color: var(--raw-umber);    
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+}
+
+header {
+    font-size: 2em;
+    margin: 10px;
+}
+
+a {
+    color: green;
 }
 
 table {
@@ -12,8 +34,12 @@ th {
     text-align: center;
 }
 
-tr {
+tbody {
     text-align: center;
+}
+
+
+tr {
     border: 2px solid red;
 }
 
@@ -21,10 +47,19 @@ td {
     border: 1px solid brown;
 }
 
-tfoot {
-    height: 30px;
+.total-td {
+    text-align: right;
+    border: none;
+}
+
+.cart-total {
+    border: none;
 }
 
 button {
     margin: 5px;
+}
+
+footer {
+    margin: 20px;
 }

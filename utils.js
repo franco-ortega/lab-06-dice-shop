@@ -29,6 +29,27 @@ export function renderDice(dice) {
     button.textContent = "Add to dice bag.";
     button.value = dice.id;
 
+// ************BUTTON STARTS HERE**************
+    button.addEventListener('click', () => {
+
+        const myCart = getFromLocalStorage('CART') || [];
+        
+        const itemInCart = findById(myCart, dice.id);
+
+        if (itemInCart === undefined) {
+            const newItemInCart = {
+                id: dice.id,
+                quantity: 1
+            };
+            myCart.push(newItemInCart);
+        } else {
+            itemInCart.quantity++;
+        }
+
+        setInLocalStorage('CART', myCart);
+    })
+// ************BUTTON ENDS HERE**************
+
     li.appendChild(name);
     li.appendChild(photo);
     li.appendChild(description);
@@ -70,3 +91,20 @@ export function calcOrderTotal(cartArray, diceArray) {
     }
     return accumulator
 }
+
+//setFromLocalStorage FUNCTION STARTS HERE******
+function setInLocalStorage(key, value) {
+    const stringyKey = JSON.stringify(value);
+    localStorage.setItem(key, stringyKey);
+
+return stringyKey;
+}
+//setFromLocalStorage FUNCTION ENDS HERE******
+
+//getFromLocalStorage FUNCTION STARTS HERE******
+export function getFromLocalStorage(key) {
+    const item = localStorage.getItem(key);
+
+    return JSON.parse(item);
+}
+//getFromLocalStorage FUNCTION ENDS HERE******

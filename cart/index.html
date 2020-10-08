@@ -1,52 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--    
-    <link rel="stylesheet" href="../styles/reset.css">
--->    
-<link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../products/products.css">
-    <link rel="stylesheet" href="cart.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="cart.css">
 
-    <title>Shopping Cart</title>
-</head>
+        <title>Shopping Cart</title>
+    </head>
 
-<body>
-    <header>
-        Welcome to the Shopping Cart
-    </header>
+    <body>
+        <header>
+            Welcome to the Shopping Cart
+        </header>
 
-    <main>
-        Your Shopping Cart
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Cost $</th>
-                    <th>Quantity</th>
-                    <th>total</th>
-                </tr>
-            </thead>
-            <tbody class="shopping-cart">
+        <main>
+            Your Shopping Cart
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Cost $</th>
+                        <th>Quantity</th>
+                        <th>total</th>
+                    </tr>
+                </thead>
+                <tbody class="shopping-cart">
 
-            </tbody>
-            <tfoot>
-                <td colspan="3">Total</td>
-                <td colspan="1  " class="cart-total"></td>
-            </tfoot>
-        </table>
+                </tbody>
+                <tfoot>
+                    <td colspan="3" class="total-td">Total:</td>
+                    <td colspan="1  " class="cart-total"></td>
+                </tfoot>
+            </table>
 
-        <button>Place Order</button>
-    </main>
-    <footer>
-        Return to the <a href="../products/index.html">Dice Bag</a>.
-        <br><br>
-        Return to the <a href="../">Home Page</a>.
-    </footer>
-    <script type="module" src="./cart2.js"></script>
+            <button class="order-button">Place Order</button>
+        </main>
+        <footer>
+            Return to the <a href="../products/index.html">Dice Bag</a>.
+            <br><br>
+            Return to the <a href="../">Home Page</a>.
+        </footer>
+        <script type="module" src="./cart.js"></script>
 
-    </body>
+        </body>
 </html>

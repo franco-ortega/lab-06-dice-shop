@@ -1,10 +1,11 @@
 import { dice } from '../products/dice.js';
 import { renderLineItems } from './render-line-items.js';
 import { calcOrderTotal, getFromLocalStorage } from '../utils.js';
+import { CART } from '../constants.js';
 
 const table = document.querySelector('tbody');
 
-const cart = getFromLocalStorage('CART') || [];
+const cart = getFromLocalStorage(CART) || [];
 
 for (let i = 0; i < cart.length; i++) {
     const myDie = cart[i];
@@ -28,7 +29,7 @@ orderButton.addEventListener('click', () => {
 
     if (cart.length) {
         alert('Your order is:' + stringy);
-        localStorage.removeItem('CART');
+        localStorage.removeItem(CART);
         window.location.href = '../';
     } else {
         orderButton.disabled = true;

@@ -1,3 +1,6 @@
+import { dice } from './products/dice.js';
+import { CART, DICE } from './constants.js';
+
 export function renderDice(dice) {
     const li = document.createElement('li');
     const id = document.createElement('id')
@@ -32,7 +35,7 @@ export function renderDice(dice) {
 // ************BUTTON STARTS HERE**************
     button.addEventListener('click', () => {
 
-        const myCart = getFromLocalStorage('CART') || [];
+        const myCart = getFromLocalStorage(CART) || [];
         
         const itemInCart = findById(myCart, dice.id);
 
@@ -46,7 +49,7 @@ export function renderDice(dice) {
             itemInCart.quantity++;
         }
 
-        setInLocalStorage('CART', myCart);
+        setInLocalStorage(CART, myCart);
     })
 // ************BUTTON ENDS HERE**************
 
@@ -76,14 +79,16 @@ export function calcLineItem(quantity, price) {
     return subTotal.toFixed(2);
 }
 
-export function calcOrderTotal(cartArray, diceArray) {
+export function calcOrderTotal(cartArray, localStorageDice) {
+
+    const localStoredDice = seedAndGetProducts();
 
     let accumulator = 0;
 
     for (let i = 0; i < cartArray.length; i++) {
         const theDice = cartArray[i];
 
-        const trueDice = findById(diceArray, theDice.id);
+        const trueDice = findById(localStoredDice, theDice.id);
 
         const grandTotal = trueDice.price * theDice.quantity;
 
@@ -93,7 +98,7 @@ export function calcOrderTotal(cartArray, diceArray) {
 }
 
 //setFromLocalStorage FUNCTION STARTS HERE******
-function setInLocalStorage(key, value) {
+export function setInLocalStorage(key, value) {
     const stringyKey = JSON.stringify(value);
     localStorage.setItem(key, stringyKey);
 
@@ -108,3 +113,27 @@ export function getFromLocalStorage(key) {
     return JSON.parse(item);
 }
 //getFromLocalStorage FUNCTION ENDS HERE******
+
+//seed FUNCTION STARTS HERE******
+export function seedAndGetProducts() {
+    let seed = (getFromLocalStorage(DICE));
+
+    if (!seed) {
+        const hardStringySeed = JSON.stringify(dice);
+
+        localStorage.setItem(DICE, hardStringySeed);
+        seed = dice;
+    }
+    return seed;
+}
+
+export function addProduct(newDie) {
+
+    const localStorageDice = seedAndGetProducts();
+
+    localStorageDice.push(newDie);
+
+    const stringyLocalDice  = JSON.stringify(localStorageDice);
+
+    localStorage.setItem(DICE, stringyLocalDice);
+}

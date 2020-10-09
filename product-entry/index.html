@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="product-entry.css">
+    <title>Product Entry Page</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../products/index.html">Products: The Dice Bag</a>
+            <a href="../cart/index.html">Shopping Cart</a>
+            <a href="../product-entry/index.html">Products Entry</a>
+        </nav>
+        <h1>
+            Welcome to the Product Entry page!
+        </h1>
+    </header>
+    <main>
+        Product entry form:
+        <form>
+            <label>
+                <input name="id" placeholder="id">
+            </label>
+            <label>
+                <input name="name" placeholder="name">
+            </label>
+            <label>
+                <input name="photo" placeholder="photo">
+            </label>
+            <label>
+                <input name="description" placeholder="description">
+            </label>
+            <label>
+                <input name="category" placeholder="category">
+            </label>
+            <label>
+                <input name="price" placeholder="price">
+            </label>
+            <button id="submit-button">Submit Entry</button>
+        </form>
+        
+    </main>
+    <script type="module" src="../utils.js"></script>
+    <script type="module" src="product-entry.js"></script>
+
+</body>
+</html>

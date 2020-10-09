@@ -1,5 +1,6 @@
-import { dice } from '../products/dice.js';
-import { findById, calcLineItem } from '../utils.js';
+import { findById, calcLineItem, seedAndGetProducts } from '../utils.js';
+
+const localStorageDice = seedAndGetProducts();
 
 export function renderLineItems(cartItem) {
     const tr = document.createElement('tr')
@@ -10,7 +11,7 @@ export function renderLineItems(cartItem) {
 
     tdQuantity.textContent = cartItem.quantity;
 
-    const diceData = findById(dice, cartItem.id);
+    const diceData = findById(localStorageDice, cartItem.id);
 
     const price = diceData.price;
     const name = diceData.name

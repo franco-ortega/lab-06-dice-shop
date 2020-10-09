@@ -20,15 +20,27 @@
     </header>
     <main>
         Product entry form:
-        <form action="submit">
-            <input type="text" placeholder="id">
-            <input type="text" placeholder="name">
-            <input type="text" placeholder="photo">
-            <input type="text" placeholder="description">
-            <input type="text" placeholder="category">
-            <input type="number" placeholder="price">
+        <form>
+            <label>
+                <input name="id" placeholder="id">
+            </label>
+            <label>
+                <input name="name" placeholder="name">
+            </label>
+            <label>
+                <input name="photo" placeholder="photo">
+            </label>
+            <label>
+                <input name="description" placeholder="description">
+            </label>
+            <label>
+                <input name="category" placeholder="category">
+            </label>
+            <label>
+                <input name="price" placeholder="price">
+            </label>
+            <button id="submit-button">Submit Entry</button>
         </form>
-        <button id="submit-button">Submit Entry</button>
         
     </main>
     <script type="module" src="../utils.js"></script>

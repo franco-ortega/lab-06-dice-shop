@@ -1,5 +1,5 @@
 import { dice } from '../products/dice.js';
-import { renderDice, findById, calcLineItem, calcOrderTotal } from '../utils.js';
+import { renderDice, findById, calcLineItem, calcOrderTotal, addProduct } from '../utils.js';
 import { renderLineItems } from '../cart/render-line-items.js';
 
 const test = QUnit.test;
@@ -123,4 +123,85 @@ test('TEST 5: This function takes the cart array and products array. Then it cal
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
+});
+
+
+
+
+
+
+
+test('TEST 6: This function will retrieve existing DICE array, and then push the new dice into the array, and then re-save the new dice array in localStorage; Test will call addProduct() and check to see if product was added to localStorage', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+
+    const newItem = {
+        id: 'the die',
+        name: 'die name',
+        photo: 'photo.png',
+        description: 'the die is pretty',
+        category: '',
+        price: '6',
+    };
+
+    const expected = [
+        {
+            id: 'black d10',
+            name: 'Black d10',
+            photo: 'd10_black.jpeg',
+            description: 'A black 10-sided die.',
+            category: '',
+            price: '3',
+        },
+    
+        {
+            id: 'blue d10',
+            name: 'Blue d10',
+            photo: 'd10_blue.jpeg',
+            description: 'A blue 10-sided die',
+            category: '',
+            price: '4'
+        },
+        {
+            id: 'green d10',
+            name: 'Green d10',
+            photo: 'd10_green.jpeg',
+            description: 'A green 10-sided die',
+            category: '',
+            price: '2'
+        },
+        {
+            id: 'red d10',
+            name: 'Red d10',
+            photo: 'd10_red.jpeg',
+            description: 'A red 10-sided die',
+            category: '',
+            price: '1'
+        },
+        {
+            id: 'yellow d10',
+            name: 'Yellow d10',
+            photo: 'd10_yellow.jpeg',
+            description: 'A yellow 10-sided die',
+            category: '',
+            price: '5'
+        },
+        {
+            id: 'the die',
+            name: 'die name',
+            photo: 'photo.png',
+            description: 'the die is pretty',
+            category: '',
+            price: '6',
+        }
+    ];
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    addProduct(newItem);
+
+    const localStorageAfter = JSON.parse(localStorage.getItem('DICE'))
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(expected, localStorageAfter);
 });

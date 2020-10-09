@@ -96,7 +96,7 @@ export function calcOrderTotal(cartArray, diceArray) {
 }
 
 //setFromLocalStorage FUNCTION STARTS HERE******
-function setInLocalStorage(key, value) {
+export function setInLocalStorage(key, value) {
     const stringyKey = JSON.stringify(value);
     localStorage.setItem(key, stringyKey);
 
@@ -114,28 +114,27 @@ export function getFromLocalStorage(key) {
 
 
 //seed FUNCTION STARTS HERE******
-console.log('This will be the seed function:')
 
 export function seedAndGetProducts() {
     let seed = (getFromLocalStorage(DICE));
 
-console.log('This is the ' + seed);
-console.log(seed);
-
     if (!seed) {
         const hardStringySeed = JSON.stringify(dice);
-console.log(hardStringySeed);
 
         localStorage.setItem(DICE, hardStringySeed);
         seed = dice;
-
-console.log('The dice: ' + dice);
-console.log('The seed is now: ' + seed);
-
-
     }
 
     return seed;
-
 }
-//console.log(seedAndGetProducts());
+
+export function addProduct(newDie) {
+
+    const localStorageDice = seedAndGetProducts();
+
+    localStorageDice.push(newDie);
+
+    const stringyLocalDice  = JSON.stringify(localStorageDice);
+
+    localStorage.setItem(DICE, stringyLocalDice);
+}

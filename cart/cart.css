@@ -1,25 +1,10 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
     --raw-umber: #6d5f44ff;
     --gold-crayola: #e8c992ff;
     --maize-crayola: #ffd151ff;    
     background-color: var(--maize-crayola);
     color: var(--raw-umber);    
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    font-size: 1em;
-    margin: 10px;
 }
 
 a {
@@ -39,7 +24,6 @@ th {
 tbody {
     text-align: center;
 }
-
 
 tr {
     border: 2px solid red;

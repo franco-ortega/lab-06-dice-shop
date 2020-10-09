@@ -1,18 +1,9 @@
 body {
     --raw-umber: #6d5f44ff;
     --gold-crayola: #e8c992ff;
-    --maize-crayola: #ffd151ff;    
+    --maize-crayola: #ffd151ff;
     background-color: var(--maize-crayola);
-    color: var(--raw-umber);    
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-header {
-    font-size: 2em;
-    margin: 10px;
+    color: var(--raw-umber);
 }
 
 ul {

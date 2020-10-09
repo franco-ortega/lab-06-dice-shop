@@ -79,14 +79,16 @@ export function calcLineItem(quantity, price) {
     return subTotal.toFixed(2);
 }
 
-export function calcOrderTotal(cartArray, diceArray) {
+export function calcOrderTotal(cartArray, localStorageDice) {
+
+    const localStoredDice = seedAndGetProducts();
 
     let accumulator = 0;
 
     for (let i = 0; i < cartArray.length; i++) {
         const theDice = cartArray[i];
 
-        const trueDice = findById(diceArray, theDice.id);
+        const trueDice = findById(localStoredDice, theDice.id);
 
         const grandTotal = trueDice.price * theDice.quantity;
 
@@ -112,9 +114,7 @@ export function getFromLocalStorage(key) {
 }
 //getFromLocalStorage FUNCTION ENDS HERE******
 
-
 //seed FUNCTION STARTS HERE******
-
 export function seedAndGetProducts() {
     let seed = (getFromLocalStorage(DICE));
 
@@ -124,7 +124,6 @@ export function seedAndGetProducts() {
         localStorage.setItem(DICE, hardStringySeed);
         seed = dice;
     }
-
     return seed;
 }
 

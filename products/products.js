@@ -1,6 +1,4 @@
-//import { dice } from './dice.js';
 import { renderDice, seedAndGetProducts } from '../utils.js';
-//import { DICE } from '../constants.js';
 
 const ul = document.querySelector('#list');
 

@@ -18,9 +18,6 @@ header {
     justify-content: center;
 }
 
-h2 {
-}
-
 nav {
     display: flex;
     flex-direction: column;

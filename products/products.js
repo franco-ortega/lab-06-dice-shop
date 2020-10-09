@@ -1,10 +1,13 @@
-import { dice } from './dice.js';
-import { renderDice } from '../utils.js';
+//import { dice } from './dice.js';
+import { renderDice, seedAndGetProducts } from '../utils.js';
+//import { DICE } from '../constants.js';
 
 const ul = document.querySelector('#list');
 
-for (let i = 0; i < dice.length; i++) {
-    const die = dice[i];
+const diceList = seedAndGetProducts();
+
+for (let i = 0; i < diceList.length; i++) {
+    const die = diceList[i];
 
     const li = renderDice(die);
 

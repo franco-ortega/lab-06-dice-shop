@@ -1,3 +1,6 @@
+import { dice } from './products/dice.js';
+import { CART, DICE } from './constants.js';
+
 export function renderDice(dice) {
     const li = document.createElement('li');
     const id = document.createElement('id')
@@ -32,7 +35,7 @@ export function renderDice(dice) {
 // ************BUTTON STARTS HERE**************
     button.addEventListener('click', () => {
 
-        const myCart = getFromLocalStorage('CART') || [];
+        const myCart = getFromLocalStorage(CART) || [];
         
         const itemInCart = findById(myCart, dice.id);
 
@@ -46,7 +49,7 @@ export function renderDice(dice) {
             itemInCart.quantity++;
         }
 
-        setInLocalStorage('CART', myCart);
+        setInLocalStorage(CART, myCart);
     })
 // ************BUTTON ENDS HERE**************
 
@@ -108,3 +111,31 @@ export function getFromLocalStorage(key) {
     return JSON.parse(item);
 }
 //getFromLocalStorage FUNCTION ENDS HERE******
+
+
+//seed FUNCTION STARTS HERE******
+console.log('This will be the seed function:')
+
+export function seedAndGetProducts() {
+    let seed = (getFromLocalStorage(DICE));
+
+console.log('This is the ' + seed);
+console.log(seed);
+
+    if (!seed) {
+        const hardStringySeed = JSON.stringify(dice);
+console.log(hardStringySeed);
+
+        localStorage.setItem(DICE, hardStringySeed);
+        seed = dice;
+
+console.log('The dice: ' + dice);
+console.log('The seed is now: ' + seed);
+
+
+    }
+
+    return seed;
+
+}
+//console.log(seedAndGetProducts());
